@@ -154,6 +154,14 @@ const SearchBar = () => {
     setFilteredData([]);
   };
 
+  //filtering the array after an item that has nigeria as country
+  useEffect(() => {
+    const filteredArray = data.filter((country) => {
+      return country.country === "Nigeria";
+    });
+    console.log(filteredArray);
+  }, []);
+
   return (
     <div className="search">
       <div className="searchInputs">

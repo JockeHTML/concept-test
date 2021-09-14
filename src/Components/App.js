@@ -8,6 +8,7 @@ import TextList from "./TextList";
 import SearchBar from "./SearchBar";
 import SecondSearchBar from "./SecondSearchBar";
 import Calc from "./Calc";
+import Reduce from "./Reduce";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <SearchBar />
         <SecondSearchBar />
         <Calc />
+        <Reduce />
       </div>
     </TaskListContextProvider>
   );

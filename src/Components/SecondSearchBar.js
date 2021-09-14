@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import { data } from "./SearchBar";
-import { Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 const SecondSearchBar = () => {
   const [searchWord, setSearchWord] = useState("");
   const [filteredSearch, setFilteredSearch] = useState([]);
+  const [uniqueValues, setUniqueValues] = useState([]);
+
+  //to get unique country for every object in my data and save it back to an array
+  useEffect(() => {
+    const unique = [
+      ...new Set(
+        data.map((value, index) => {
+          return value.country;
+        })
+      ),
+    ];
+    setUniqueValues(unique);
+  }, []);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
@@ -14,7 +27,11 @@ const SecondSearchBar = () => {
     const newFilteredSearch = data.filter((search, index) => {
       return search.title.toLowerCase().includes(searchTerm);
     });
-    setFilteredSearch(newFilteredSearch);
+    if (searchTerm === "") {
+      return setFilteredSearch([]);
+    } else {
+      setFilteredSearch(newFilteredSearch);
+    }
   };
 
   const handleClose = () => {
@@ -54,6 +71,9 @@ const SecondSearchBar = () => {
           })}
         </div>
       ) : null}
+      <ul style={{ display: "flex", flexDirection: "column" }}>
+        <li>{uniqueValues}</li>
+      </ul>
     </div>
   );
 };
