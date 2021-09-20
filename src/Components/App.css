@@ -10,7 +10,7 @@
 .container {
   background: linear-gradient(100deg, rgb(91, 168, 182) 50%, #2f7fca 0);
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

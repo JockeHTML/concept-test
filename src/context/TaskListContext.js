@@ -39,9 +39,33 @@ export const TaskListContextProvider = (props) => {
     setTasks([]);
   };
 
+  //<----------------QUIZ STATES---------------->
+  const [startQuiz, setStartQuiz] = useState("menu");
+  const [inputText, setInputText] = useState("");
+  const [saveName, setSaveName] = useState("");
+  const [points, setPoints] = useState(0);
+  const [answer, setAnswer] = useState("");
+
   //sharing my context through contextProvider and pushing my values through it to all the children that it wraps
   return (
-    <TaskListContext.Provider value={{ clearList, tasks, addTask, removeTask }}>
+    <TaskListContext.Provider
+      value={{
+        answer,
+        setAnswer,
+        inputText,
+        setInputText,
+        points,
+        setPoints,
+        startQuiz,
+        setStartQuiz,
+        saveName,
+        setSaveName,
+        clearList,
+        tasks,
+        addTask,
+        removeTask,
+      }}
+    >
       {props.children}
     </TaskListContext.Provider>
   );

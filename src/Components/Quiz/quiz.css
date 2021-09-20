@@ -1,0 +1,35 @@
+.btn {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  width: auto;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.first-question input {
+  margin: 0;
+  padding: 1rem;
+}
+
+.quiz-container {
+  margin: 2rem;
+}
+
+.first-question {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 400px;
+  padding: 1rem;
+  margin: 0;
+  background-color: darkcyan;
+}
+
+.first-question h1 {
+  text-align: center;
+  color: white;
+}
